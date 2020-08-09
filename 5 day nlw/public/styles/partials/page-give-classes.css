@@ -4,23 +4,20 @@
 }
 
 #page-give-classes .page-header .header-content {
-    color: var(--color-text-in-primary);
     margin-bottom: 6.4rem;
 }
 
-#page-give-classes main{
+#page-give-classes main {
     background: var(--color-box-base);
     width: 100%;
     max-width: 74rem;
-    border-radius: 0.8rem;
+    border-radius: .8rem;
     margin: -3.2rem auto 3.2rem;
     padding-top: 6.4rem;
-    overflow: hidden;
 }
 
 #page-give-classes fieldset {
     border: none;
-
     padding: 0 2.4rem;
 }
 
@@ -34,7 +31,6 @@
     justify-content: space-between;
 
     width: 100%;
-
     padding-bottom: 1.6rem;
     border-bottom: 1px solid var(--color-line-in-white);
 }
@@ -42,17 +38,14 @@
 #page-give-classes fieldset legend button {
     background: none;
     border: 0;
-
     color: var(--color-primary);
-
     font: 700 1.6rem Archivo;
-
     cursor: pointer;
-
-    transition: 0.2;
+    transition: .2s;
 }
 
-#page-give-classes fieldset legend button::hover {
+#page-give-classes fieldset legend button:hover {
+    transform: translateY(-5px);
     color: var(--color-primary-dark);
 }
 
@@ -60,28 +53,26 @@
     margin-top: 6.4rem;
 }
 
-#page-give-classes .input-block+.input-block,
-#page-give-classes .input-block+.textarea-block,
-#page-give-classes .select-block+.input-block {
+#page-give-classes .input-block+.input.block,
+#page-give-classes .input-block+.textarea-bloc
+#page-give-classes .select-block+.input.block {
     margin-top: 2.4rem;
 }
 
 #page-give-classes main footer {
     padding: 4rem 2.4rem;
-
     background: var(--color-box-footer);
     border-top: 1px solid var(--color-line-in-white);
     margin-top: 6.4rem;
 }
 
 #page-give-classes main footer p {
-    display: flex;
+    display:flex;
     align-items: center;
     justify-content: center;
 
     font-size: 1.4rem;
     line-height: 2.4rem;
-
     color: var(--color-text-complement);
 }
 
@@ -98,21 +89,19 @@
     border-radius: .8rem;
     cursor: pointer;
     font: 700 1.6rem Archivo;
-
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    
-    transition: 0.2s;
+    transition: .2s;
     margin-top: 3.2rem;
 }
 
-.schedule-item+schedule-item {
+.schedule-item+.schedule-item {
     margin-top: 3.2rem;
     padding-top: 3.2rem;
 
-    border-top: 1px solid var (--color-line-in-white);
+    border-top: 1px solid var(--color-line-in-white);
 }
 
 @media (min-width: 700px) {
@@ -133,15 +122,13 @@
         grid-template-columns: 2fr 1fr 1fr;
         column-gap: 1.6rem;
     }
-    
-    #page-give-classes #schedule-items .select-block+.input-block,
-    #page-give-classes #schedule-items .input-block+.input-block {
+
+    .schedule-item .input-block {
         margin-top: 0;
     }
 
     #page-give-classes main footer {
-        padding: 40px 60px;
-
+        padding: 40px 64px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -151,4 +138,5 @@
         margin-top: 0;
         width: 200px;
     }
+
 }

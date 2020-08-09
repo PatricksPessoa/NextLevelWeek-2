@@ -2,55 +2,56 @@ const Database = require('./db.js')
 const createProffy = require('./createProffy')
 
 Database.then(async (db) => {
-    //inserir dados
-
+    // Inserir dados
     proffyValue = {
-        name: 'Patrick Pessoa',
-        avatar:'https://avatars3.githubusercontent.com/u/56482603?s=460&u=a6a0486b5943aaa4aefaab1146554c7bb07fd2d4&v=4',
-        whatsapp: '21990985474',
-        bio: 'Professor de programação'
+        name: 'Luiz Gustavo Muller',
+        avatar:'https://scontent.fria3-1.fna.fbcdn.net/v/t1.0-9/11137114_974947785872472_4138925663123034127_n.jpg?_nc_cat=103&_nc_sid=7aed08&_nc_ohc=wYwJvZdfATgAX9xBo6-&_nc_ht=scontent.fria3-1.fna&oh=3340545fa6fa04996bba6eba44a4ffbc&oe=5F517DA6',
+        whatsapp: '899886622',
+        bio: 'Entusiasta das melhores tecnologias de química avançada.<br><br>Apaixonado por explodir coisas em laboratório e por mudar a vida das pessoas através de experiências. Mais de 200.000 pessoas já passaram por uma das minhas explosões.',
     }
 
     classValue = {
-        subject: 1,
-        cost:"20",
-        //o proffy id virá pelo banco de dados
+        subject: 1, 
+        cost: "200", 
+        // proffy_id virá pelo banco de dados
     }
 
     classScheduleValues = [
-        //class_id virá pelo banco de dados, após cadastramos a class
+        //class_id virá pelo banco de dados, após cadastrarmos a class
         {
-            weekday: 1,
-            time_from: 720,
+            weekday: 1, 
+            time_from: 720, 
             time_to: 1220
         },
         {
-            weekday: 0,
-            time_from: 520,
+            weekday: 0, 
+            time_from: 540, 
             time_to: 1220
         }
     ]
-    // await createProffy(db, {proffyValue, classValue, classScheduleValues})
+    
+//   await  createProffy(db, {proffyValue, classValue, classScheduleValues})
 
-    //Consultar os dados inseridos
+  
+    //Consultar os dados inseridos:
 
-    //todos os proffys
+    //Todos os proffys
     const selectedProffys = await db.all("SELECT * FROM proffys")
-    //console.log(selectedProffys)
+    // console.log(selectedProffys)
 
     //consultar as classes de um determinado professor
     //e trazer junto os dados do professor
-    const selectedClassesAndProffys = await db.all(`
+    const selectClassesAndProffys = await db.all(`
         SELECT classes.*, proffys.*
         FROM proffys
         JOIN classes ON (classes.proffy_id = proffys.id)
         WHERE classes.proffy_id = 1;
     `)
-    //console.log(selectClassesAndProffys)
+    // console.log(selectClassesAndProffys)
 
-    //o horário que a pessoa trabalha por exemplo, é das 8 as 18
-    // o horário do time_from precisa ser antes ou igual ao horário solicitado
-    //o time_to precisa ser acima
+    // o horario que a pessoa trabalha, por exemplo, é das 8 as 18
+    // o horario do time_from (8) precisa ser antes ou igual ao horário solicitado
+    // o time_to precisa ser acima
 
     const selectClassesSchedules = await db.all(`
         SELECT class_schedule.*
@@ -60,5 +61,7 @@ Database.then(async (db) => {
         AND class_schedule.time_from <= "420"
         AND class_schedule.time_to > "1520"
     `)
-    //console.log(selectClassesSchedules)
+    // console.log(selectClassesSchedules)
+
+
 })

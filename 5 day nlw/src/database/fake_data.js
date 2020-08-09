@@ -1,7 +1,7 @@
 //Dados
 const proffys = [
     { 
-        name: 'Luis Gustavo Muller',
+        name: 'Luiz Gustavo Muller',
         avatar:'https://scontent.fria3-1.fna.fbcdn.net/v/t1.0-9/11137114_974947785872472_4138925663123034127_n.jpg?_nc_cat=103&_nc_sid=7aed08&_nc_ohc=wYwJvZdfATgAX9xBo6-&_nc_ht=scontent.fria3-1.fna&oh=3340545fa6fa04996bba6eba44a4ffbc&oe=5F517DA6',
         whatsapp: '899886622',
         bio: "Entusiasta das melhores tecnologias de química avançada.<br><br>Apaixonado por explodir coisas em laboratório e por mudar a vida das pessoas através de experiências. Mais de 200.000 pessoas já passaram por uma das minhas explosões.", 
